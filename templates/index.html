@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Ease - AI Placement Prediction</title>
+  <link rel="stylesheet" href="static/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-brand">
+        <i class="ri-brain-line"></i>
+        <span>Campus<strong>Ease</strong></span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#predictor">Predictor</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+      <a href="#predictor" class="btn-primary">Try Now</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container">
+      <h1>Predict Your Placement Success with AI</h1>
+      <p>Campus Ease uses LSTM deep learning to analyze your profile and predict placement probability with 98.9% accuracy.</p>
+      <div class="hero-actions">
+        <a href="#predictor" class="btn-primary">Get Started</a>
+        <a href="#about" class="btn-secondary">Learn More</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <h3>98.9%</h3>
+          <p>Accuracy</p>
+        </div>
+        <div class="stat">
+          <h3>10K+</h3>
+          <p>Students</p>
+        </div>
+        <div class="stat">
+          <h3>6</h3>
+          <p>Models</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <div class="container">
+      <h2>Key Features</h2>
+      <div class="features-grid">
+        
+        <div class="feature-card">
+          <i class="ri-brain-line"></i>
+          <h3>AI Prediction</h3>
+          <p>LSTM model with 98.9% accuracy predicts your placement probability.</p>
+        </div>
+
+        <div class="feature-card">
+          <i class="ri-bar-chart-line"></i>
+          <h3>Skill Analysis</h3>
+          <p>Identifies gaps in your technical and soft skills profile.</p>
+        </div>
+
+        <div class="feature-card">
+          <i class="ri-lightbulb-line"></i>
+          <h3>Recommendations</h3>
+          <p>Get personalized suggestions to improve your placement chances.</p>
+        </div>
+
+        <div class="feature-card">
+          <i class="ri-eye-line"></i>
+          <h3>Explainable AI</h3>
+          <p>Understand predictions with SHAP and LIME explanations.</p>
+        </div>
+
+        <div class="feature-card">
+          <i class="ri-flashlight-line"></i>
+          <h3>Real-time Results</h3>
+          <p>Instant predictions via REST API backend.</p>
+        </div>
+
+        <div class="feature-card">
+          <i class="ri-shield-check-line"></i>
+          <h3>Multi-Model</h3>
+          <p>Benchmarked across 6 ML and DL models.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PREDICTOR -->
+  <section class="predictor" id="predictor">
+    <div class="container-wide">
+      <h2>AI Placement Predictor</h2>
+      <p class="section-desc">Enter your details to get instant placement prediction</p>
+      
+      <!-- FORM - FULL WIDTH -->
+      <div class="form-panel-wide">
+        <h3>Your Profile</h3>
+        <form id="predictorForm">
+          
+          <div class="form-grid">
+            
+            <div class="form-group">
+              <label>CGPA (0-10)</label>
+              <input type="number" name="CGPA" step="0.01" min="0" max="10" required>
+            </div>
+
+            <div class="form-group">
+              <label>IQ Score (50-200)</label>
+              <input type="number" name="IQ" min="50" max="200" required>
+            </div>
+
+            <div class="form-group">
+              <label>Previous Semester Result (0-10)</label>
+              <input type="number" name="Prev_Sem_Result" step="0.01" min="0" max="10" required>
+            </div>
+
+            <div class="form-group">
+              <label>Academic Performance (1-10)</label>
+              <input type="number" name="Academic_Performance" min="1" max="10" required>
+            </div>
+
+            <div class="form-group">
+              <label>Communication Skills (1-10)</label>
+              <input type="number" name="Communication_Skills" min="1" max="10" required>
+            </div>
+
+            <div class="form-group">
+              <label>Technical Test Score (0-100)</label>
+              <input type="number" name="Technical_Test_Score" step="0.1" min="0" max="100" required>
+            </div>
+
+            <div class="form-group">
+              <label>Projects Completed</label>
+              <input type="number" name="Projects_Completed" min="0" max="20" required>
+            </div>
+
+            <div class="form-group">
+              <label>Extra Curricular Score (0-10)</label>
+              <input type="number" name="Extra_Curricular_Score" min="0" max="10" required>
+            </div>
+
+            <div class="form-group">
+              <label>Soft Skills Score (1-10)</label>
+              <input type="number" name="Soft_Skills_Score" min="1" max="10" required>
+            </div>
+
+            <div class="form-group">
+              <label>Resume Score (1-10)</label>
+              <input type="number" name="Resume_Score" min="1" max="10" required>
+            </div>
+
+            <div class="form-group">
+              <label>Certifications Count (0-5)</label>
+              <input type="number" name="Certifications_Count" min="0" max="5" required>
+            </div>
+
+            <div class="form-group">
+              <label>Hackathons Participated (0-3)</label>
+              <input type="number" name="Hackathons_Participated" min="0" max="3" required>
+            </div>
+
+            <!-- SKILLS SECTION -->
+            <div class="skills-section">
+              <h4 class="skills-heading"><i class="ri-code-box-line"></i> Skills</h4>
+              
+              <div class="skills-container">
+                <div class="skills-column">
+                  <div class="checkbox-group">
+                    <label>
+                      <input type="checkbox" name="Internship_Experience">
+                      <span>Internship Experience</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" name="Python_Skill">
+                      <span>Python</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" name="DSA_Skill">
+                      <span>Data Structures & Algorithms</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" name="SQL_Skill">
+                      <span>SQL / Databases</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" name="Java_Skill" data-extra="true">
+                      <span>Java</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" name="JavaScript_Skill" data-extra="true">
+                      <span>JavaScript</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" name="CPP_Skill" data-extra="true">
+                      <span>C / C++</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="skills-column">
+                  <div class="checkbox-group">
+                    <label>
+                      <input type="checkbox" name="React_Skill" data-extra="true">
+                      <span>React / Frontend</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" name="NodeJS_Skill" data-extra="true">
+                      <span>Node.js / Backend</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" name="ML_Skill" data-extra="true">
+                      <span>Machine Learning</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" name="AI_Skill" data-extra="true">
+                      <span>Artificial Intelligence</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" name="DataScience_Skill" data-extra="true">
+                      <span>Data Science</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" name="AWS_Skill" data-extra="true">
+                      <span>AWS</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" name="Azure_Skill" data-extra="true">
+                      <span>Azure</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="skills-column">
+                  <div class="checkbox-group">
+                    <label>
+                      <input type="checkbox" name="GCP_Skill" data-extra="true">
+                      <span>Google Cloud</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" name="Docker_Skill" data-extra="true">
+                      <span>Docker / Kubernetes</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" name="Git_Skill" data-extra="true">
+                      <span>Git / Version Control</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" name="DevOps_Skill" data-extra="true">
+                      <span>DevOps</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" name="Cybersecurity_Skill" data-extra="true">
+                      <span>Cybersecurity</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" name="Blockchain_Skill" data-extra="true">
+                      <span>Blockchain</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <button type="submit" class="btn-submit">Predict Placement</button>
+        </form>
+      </div>
+
+      <!-- RESULT - FULL WIDTH BELOW -->
+      <div class="result-panel-wide" id="resultPanel">
+        <div class="result-idle" id="resultIdle">
+          <i class="ri-bar-chart-2-line"></i>
+          <h3>Results will appear here</h3>
+          <p>Fill the form and click Predict Placement</p>
+        </div>
+
+        <div class="result-content" id="resultContent" style="display:none;">
+          <div class="result-score">
+            <h2 id="probValue">0%</h2>
+            <p>Placement Probability</p>
+          </div>
+          <div class="result-status" id="resultStatus"></div>
+          <div class="recommendations" id="recommendations"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <h2>About Campus Ease</h2>
+      <p>Built with cutting-edge AI and deep learning to solve placement prediction challenges.</p>
+      
+      <div class="about-grid">
+        <div class="about-item">
+          <h4>Best Model</h4>
+          <p>LSTM with 98.9% accuracy and 0.9987 ROC-AUC</p>
+        </div>
+        <div class="about-item">
+          <h4>Dataset</h4>
+          <p>10,000 student records with 16 features</p>
+        </div>
+        <div class="about-item">
+          <h4>Technology</h4>
+          <p>TensorFlow, Flask, SHAP, LIME</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Campus Ease. Built with AI & Deep Learning.</p>
+    </div>
+  </footer>
+
+  <script src="script_new.js"></script>
+</body>
+</html>
